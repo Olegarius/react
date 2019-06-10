@@ -1,49 +1,46 @@
-const webpack = require('webpack')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const outputPath = path.resolve(__dirname, './dist')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const webpackConfig = {
-	entry: {
-		app: [
-			'react-hot-loader/patch',
-			path.resolve(__dirname, './src/index.js')
-		]
-	},
-	output: {
-		path: path.resolve(__dirname, './dist'),
-		filename: '[name].js'
-	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				enforce: 'pre',
-				exclude: /node_modules/,
-				use: 'eslint-loader'
-			},
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				use: 'babel-loader'
-			},
-			{
-				test: /\.(scss|css)$/,
-				exclude: /node_modules/,
-				use: [
-					'style-loader',
-					'css-loader',
-					'sass-loader'
-				]
-			},
-			{
-				test: /\.(gif|png|jpg|jpeg|svg)$/,
-				exclude: /node_modules/,
-				include: path.resolve(__dirname, './src/assets/'),
-				use: 'url-loader?limit=10000&name=assets/[name]-[hash].[ext]'
-			}
-		]
-	},
+const mode = (process || process.env.npm_lifecycle_script.match(/(?<=--mode\s+).+/) || ['production'])[0];
+
+module.exports = {
+  mode,
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'index.js',
+    publicPath: '/'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'React Cources',
+      inject: true,
+      favicon: './src/favicon.png',
+      template: './src/index.ejs'
+    }),
+    new ManifestPlugin({
+      fileName: 'asset-manifest.json'
+    }),
+    new CleanWebpackPlugin()
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(eot|otf|svg|ttf|woff|png)$/,
+        use: {
+          loader: 'file-loader',
+          options: { name: 'assets/[name][hash].[ext]' }
+        }
+      }
+    ]
+  },
 	resolve: {
 		alias: {
 			'components': path.resolve(__dirname, './src/components'),
@@ -54,23 +51,18 @@ const webpackConfig = {
 			'assets': path.resolve(__dirname, './src/assets'),
 		}
 	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: path.join(__dirname, './src/assets/index.html'),
-			filename: 'index.html',
-			path: outputPath
-		}),
-		new webpack.NamedModulesPlugin(),
-		new webpack.HotModuleReplacementPlugin()
-	],
-	devServer: {
-		contentBase: path.resolve(__dirname, './dist'),
-		port: 8080,
-		historyApiFallback: true,
-		inline: true,
-		hot: true,
-		host: '0.0.0.0'
-	}
-}
-
-module.exports = webpackConfig
+  devtool: mode === 'production' ? false : 'cheap-module-source-map',
+  node: {
+    dgram: 'empty',
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    child_process: 'empty'
+  },
+  devServer: {
+    contentBase: false,
+    historyApiFallback: true,
+    host: '0.0.0.0',
+    port: 1000
+  }
+};

@@ -7,3 +7,8 @@ export default class HelloComponent extends Component {
 		)
 	}
 }
+/*
+export default const HelloComponent = () => (
+	<div>Hello World!</div>
+);
+*/

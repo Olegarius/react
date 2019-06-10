@@ -1,11 +1,11 @@
 {
-	"presets": [
-		["es2015", { "modules": false }],
-		"react",
-		"stage-0"
-	],
+  "presets": [
+      [ "env", {
+          "modules": false
+      }],
+      "react"
+  ],
 	"plugins": [
-		"react-html-attrs",
-		"react-hot-loader/babel"
+		"react-html-attrs"
 	]
 }

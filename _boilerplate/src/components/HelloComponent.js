@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 
-export default class HelloComponent extends Component {
+class HelloComponent extends Component {
 	render() {
 		return (
-			<div>Hello World!</div>
+      <div>
+        <div>Hello World!</div>
+      </div>
 		)
 	}
 }
 /*
-export default const HelloComponent = () => (
+const HelloComponent = () => (
 	<div>Hello World!</div>
 );
 */
+
+export default HelloComponent;

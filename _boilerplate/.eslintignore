@@ -1,0 +1,9 @@
+/* eslint-disable */
+build
+prod
+coverage
+node_modules
+/dist
+.git
+jest_cache
+/src/assets

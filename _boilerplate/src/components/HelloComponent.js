@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class HelloComponent extends Component {
 	render() {
 		return (
-      <div>
-        <div>Hello World!</div>
-      </div>
-		)
+			<div>
+				<div>Hello World!</div>
+			</div>
+		);
 	}
 }
 /*

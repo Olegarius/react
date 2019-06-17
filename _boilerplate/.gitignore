@@ -1,10 +1,7 @@
+build
+prod
+coverage
 node_modules
-build/
-coverage/
-.module-cache
-*.log*
-Thumbs.db
-ehthumbs.db
-ehthumbs_vista.db
-Desktop.ini
-$RECYCLE.BIN/
+*.log
+.vscode/
+jest_cache

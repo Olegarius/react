@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Set, List } from 'immutable';
+import { List } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
+
+import AuthHOC from 'containers/AuthHOC';
 
 const GreatingComponent = ({ name }) => <div>Greating {name}!</div>;
 
@@ -12,7 +14,6 @@ GreatingComponent.propTypes = {
 	children: PropTypes.node,
 	progress: PropTypes.number,
 	users: ImmutablePropTypes.list,
-	// coupons: ImmutablePropTypes.orderedSet,
 	someList: ImmutablePropTypes.setOf(
 		ImmutablePropTypes.contains({
 			id: PropTypes.number,
@@ -29,10 +30,9 @@ GreatingComponent.propTypes = {
 
 GreatingComponent.defaultProps = {
 	name: 'noname',
-	coupons: Set(),
 	onClick: () => {},
 	children: null,
 	users: List()
 };
 
-export default GreatingComponent;
+export default AuthHOC(GreatingComponent);

@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 
-class HelloComponent extends Component {
-	render() {
-		return (
-			<div>
-				<div>Hello World!</div>
-			</div>
-		);
-	}
-}
-/*
+import Greating from 'components/GreatingComponent';
+import UserList from 'containers/UserListContainer';
+
 const HelloComponent = () => (
-	<div>Hello World!</div>
+	<Fragment>
+		<div>Hello World!</div>
+		<Greating />
+		<UserList />
+	</Fragment>
 );
-*/
 
 export default HelloComponent;

@@ -10,5 +10,7 @@ export const Reload = styled.div`
   display: inline-block;
   padding: 10px;
   border: 1px solid black;
+  background-color: green;
+  cursor: pointer;
   ${ disableButton };
 `;

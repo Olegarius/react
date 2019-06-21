@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { login } from 'utils/Auth';
+import { login, getLoginStatus } from 'utils/Auth';
 
 export default ChildComponent =>
 	class AuthHOC extends Component {
 		constructor() {
 			super();
-			this.state = { name: '' };
+			this.state = { name: getLoginStatus() ? 'SomeUser' : '' };
 		}
 
     auth = () => {

@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import { login, getLogin } from 'utils/Auth';
 
-export default ChildComponent =>
-	class AuthHOC extends Component {
-		constructor() {
-			super();
-			this.state = { name: getLogin() || '' };
-		}
+export default (ChildComponent) => {
+	const AuthHOC = () => {
+		const [ name, setName ] = useState(getLogin() ? 'SomeUser' : '');
 
-    auth = () => {
-    	if (this.state.name) {
+		const auth = () => {
+    	if (name) {
     		return true;
     	}
 
@@ -20,20 +17,22 @@ export default ChildComponent =>
     		return false;
     	}
 
-    	this.setState({ name });
+    	setName({ name });
     	login(name);
 
     	return true;
-    };
+		};
 
-    noName = () => (
+		// eslint-disable-next-line react/display-name
+		const noName = () => (
     	<div>
     		<div>You didn't enter name!</div>
-    		<button onClick={ this.auth }>try again?</button>
+    		<button onClick={ auth }>try again?</button>
     	</div>
-    );
+		);
 
-    render() {
-    	return this.state.name ? <ChildComponent name={ this.state.name } /> : this.noName();
-    }
+  	return name ? <ChildComponent name={ name } /> : noName();
 	};
+
+	return AuthHOC;
+};

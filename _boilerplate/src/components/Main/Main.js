@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { Link, NavLink } from './Main.style';
+import { Href, NavLink } from './Main.style';
 
 const userListClick = history => () => {
 	const userListCount = prompt('UserList count=');
@@ -13,7 +13,7 @@ const Main = ({ history, children }) => (
 	<Fragment>
 		<ul>
 			<li>
-				<Link href="/">Home</Link>
+				<Href href="/">Home</Href>
 			</li>
 			<li>
 				<NavLink to="/greating">Greating</NavLink>

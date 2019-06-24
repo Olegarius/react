@@ -25,10 +25,10 @@ const lifecycleEvents = {
 		this.props.setUserList(getUsers(this.props));
 	},
 	componentDidUpdate(prevProps) {
-    if (prevProps.userListCount !== this.props.userListCount) {
-      this.props.setUserList(getUsers(this.props));
-    }
-  },
+		if (prevProps.userListCount !== this.props.userListCount) {
+			this.props.setUserList(getUsers(this.props));
+		}
+	},
 	componentWillUnmount() {}
 };
 

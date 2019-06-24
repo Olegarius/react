@@ -3,16 +3,18 @@ import faker from 'faker';
 import { List, fromJS } from 'immutable';
 
 const getAuth = props => props.auth || false;
-const getUserList = () => {
+const getUserList = ({ userListCount }) => {
 	const users = [];
 
-	for (let i = 0; i < 5000; i++) {
-		users.push(
-			fromJS({
-				name: faker.internet.userName(),
-				id: i
-			})
-		);
+	if (!Object.is(userListCount, NaN)) {
+		for (let i = 0; i < userListCount; i++) {
+			users.push(
+				fromJS({
+					name: faker.internet.userName(),
+					id: i
+				})
+			);
+		}
 	}
 
 	return users;

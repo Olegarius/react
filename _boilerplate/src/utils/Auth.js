@@ -1,8 +1,8 @@
-export const login = () => {
-	localStorage.setItem('logined', true);
+export const login = (name) => {
+	localStorage.setItem('logined', name);
 };
 
-export const getLoginStatus = () => !!localStorage.getItem('logined');
+export const getLogin = () => localStorage.getItem('logined');
 
 export const logout = () => {
 	localStorage.removeItem('logined');

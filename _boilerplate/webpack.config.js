@@ -50,7 +50,9 @@ module.exports = {
 			store: path.resolve(__dirname, './src/store'),
 			assets: path.resolve(__dirname, './src/assets'),
 			utils: path.resolve(__dirname, './src/utils'),
-			selectors: path.resolve(__dirname, './src/selectors')
+			selectors: path.resolve(__dirname, './src/selectors'),
+			pages: path.resolve(__dirname, './src/pages'),
+			root: path.resolve(__dirname, './src')
 		}
 	},
 	devtool: mode === 'production' ? false : 'cheap-module-source-map',

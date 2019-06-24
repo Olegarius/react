@@ -2,37 +2,38 @@ import React, { useState } from 'react';
 
 import { login, getLogin } from 'utils/Auth';
 
-export default (ChildComponent) => {
+const HOC = (ChildComponent) => {
 	const AuthHOC = () => {
 		const [ name, setName ] = useState(getLogin() ? 'SomeUser' : '');
 
 		const auth = () => {
-    	if (name) {
-    		return true;
-    	}
+			if (name) {
+				return true;
+			}
 
-    	const name = prompt('Enter your name: ');
+			const name = prompt('Enter your name: ');
 
-    	if (!name || !name.trim().length) {
-    		return false;
-    	}
+			if (!name || !name.trim().length) {
+				return false;
+			}
 
-    	setName({ name });
-    	login(name);
+			setName({ name });
+			login(name);
 
-    	return true;
+			return true;
 		};
 
-		// eslint-disable-next-line react/display-name
 		const noName = () => (
-    	<div>
-    		<div>You didn't enter name!</div>
-    		<button onClick={ auth }>try again?</button>
-    	</div>
+			<div>
+				<div>You didn't enter name!</div>
+				<button onClick={ auth }>try again?</button>
+			</div>
 		);
 
-  	return name ? <ChildComponent name={ name } /> : noName();
+		return name ? <ChildComponent name={ name } /> : noName();
 	};
 
 	return AuthHOC;
 };
+
+export default HOC;

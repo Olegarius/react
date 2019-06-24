@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 import { login, getLoginStatus } from 'utils/Auth';
 
 export default ChildComponent =>
-	class AuthHOC extends Component {
-		constructor() {
-			super();
-			this.state = { name: getLoginStatus() ? 'SomeUser' : '' };
-		}
+	const AuthHOC = () => {
+    const [ name, setName ] = useState(getLoginStatus() ? 'SomeUser' : '');
 
     auth = () => {
-    	if (this.state.name) {
+    	if (name) {
     		return true;
     	}
 
@@ -20,8 +17,8 @@ export default ChildComponent =>
     		return false;
     	}
 
-    	this.setState({ name });
-    	login();
+    	setName({ name });
+    	login(name);
 
     	return true;
     };
@@ -29,11 +26,9 @@ export default ChildComponent =>
     noName = () => (
     	<div>
     		<div>You didn't enter name!</div>
-    		<button onClick={ this.auth }>try again?</button>
+    		<button onClick={ auth }>try again?</button>
     	</div>
     );
 
-    render() {
-    	return this.state.name ? <ChildComponent name={ this.state.name } /> : this.noName();
-    }
+  	return name ? <ChildComponent name={ name } /> : noName();
 	};

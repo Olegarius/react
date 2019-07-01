@@ -6,6 +6,7 @@ import { Reload } from './UserList.style';
 
 const UserList = props => (
 	<Fragment>
+    <h3>{props.title}</h3>
 		<Reload onClick={ props.reloadUserList } auth={ props.authStatus }>
       Reload!
 		</Reload>
@@ -25,7 +26,8 @@ UserList.propTypes = {
 		})
 	),
 	reloadUserList: PropTypes.func,
-	authStatus: PropTypes.bool
+	authStatus: PropTypes.bool,
+  title: PropTypes.string
 };
 
 export default UserList;

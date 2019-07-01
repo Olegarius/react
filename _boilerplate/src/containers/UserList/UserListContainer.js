@@ -1,10 +1,27 @@
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { compose, lifecycle, setDisplayName, withHandlers, withProps, withState } from 'recompose';
 import { List } from 'immutable';
+import { withRouter } from 'react-router-dom';
 
-import { getUserList } from 'selectors';
+import { getUserList, getPageTitle } from 'selectors';
+import { pageActions } from 'reducers';
 import { getLogin } from 'utils/Auth';
 
 import UserList from './UserList';
+
+export const mapStateToProps = state => ({
+	title: getPageTitle(state)
+});
+
+export const mapDispatchToProps = dispatch =>
+	bindActionCreators(
+		{
+			setPage: pageActions.setPage,
+			setSettings: pageActions.setSettings
+		},
+		dispatch
+	);
 
 const addProps = props => ({
 	auth: !!getLogin(props)
@@ -22,6 +39,11 @@ const handlers = {
 
 const lifecycleEvents = {
 	componentDidMount() {
+    const pageParts = this.props.location.pathname.split('/');
+		const currentPage = pageParts.length > 1 ? pageParts[1] : '';
+
+		this.props.setPage(currentPage);
+
 		this.props.setUserList(getUsers(this.props));
 	},
 	componentDidUpdate(prevProps) {
@@ -34,6 +56,8 @@ const lifecycleEvents = {
 
 const enhance = compose(
 	setDisplayName('UserListContainer'),
+	connect(mapStateToProps, mapDispatchToProps),
+  withRouter,
 	withProps(addProps),
 	withState('userList', 'setUserList', List()),
 	withState('authStatus', 'setAuthStatus', props => props.auth),

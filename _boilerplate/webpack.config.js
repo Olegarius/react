@@ -52,6 +52,7 @@ module.exports = {
 			utils: path.resolve(__dirname, './src/utils'),
 			selectors: path.resolve(__dirname, './src/selectors'),
 			pages: path.resolve(__dirname, './src/pages'),
+			middleware: path.resolve(__dirname, './src/middleware'),
 			root: path.resolve(__dirname, './src')
 		}
 	},

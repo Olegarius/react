@@ -1,23 +1,26 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Immutable from 'immutable';
 import { Provider } from 'react-redux';
+import Promise from 'es6-promise';
 import store from 'store';
+import Immutable from 'immutable';
 
-import App from 'components/App';
+import { App } from 'components';
+
+Promise.polyfill();
 
 const reduxDevTools =
-	typeof window !== 'undefined' &&
-	window.__REDUX_DEVTOOLS_EXTENSION__ &&
-	window.__REDUX_DEVTOOLS_EXTENSION__({ serialize: { immutable: Immutable } });
+  typeof window !== 'undefined' &&
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__({ serialize: { immutable: Immutable } });
 const adminStore = store(reduxDevTools);
 
 render(
 	<BrowserRouter>
 		<Provider store={ adminStore }>
-      <App />
-    </Provider>
+			<App />
+		</Provider>
 	</BrowserRouter>,
 	document.querySelector('#root')
 );

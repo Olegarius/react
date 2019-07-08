@@ -1,9 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-const Home = () => (
-	<Fragment>
-		<div>Hello World!</div>
-	</Fragment>
-);
+const Home = () => <h1>Please, select the page from the right menu</h1>;
 
 export default Home;

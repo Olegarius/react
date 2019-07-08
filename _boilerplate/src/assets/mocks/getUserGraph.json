@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "userId": "3be937a4-ea0b-4671-9d6d-03383af59802",
+      "email": "Alex@vin-smile.com",
+      "displayName": "Alex",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "ac4e4174-ac07-4de8-9ac0-913c1b37c489",
+      "email": "andrii@vin-smile.com",
+      "displayName": "Andrii Radzikovskii",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "09bd9c48-a738-416d-9c78-294c13cefbad",
+      "email": "anna@vin-smile.com",
+      "displayName": "Anna Crown",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "1d0ea0a3-5e89-44ca-abe1-4c0d083e956b",
+      "email": "d1@vin-smile.com",
+      "displayName": "Demo First",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "e712115c-e202-4319-a238-77addd0ab11d",
+      "email": "d2@vin-smile.com",
+      "displayName": "Demo Second",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "ec48ff62-cb8a-4779-a62e-dbf35dd6eb2b",
+      "email": "d3@vin-smile.com",
+      "displayName": "Demo Third",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "acdc3971-dc0b-4175-8e70-8d4d3fa26c36",
+      "email": "gtest@vin-smile.com",
+      "displayName": "gtest tester",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "991c63a3-0a90-455d-9d08-a87ef51cad28",
+      "email": "Maria@vin-smile.com",
+      "displayName": "Maria Onseo",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "6d8310ff-bed7-49cb-848e-4eed039fcffe",
+      "email": "mtwain@vin-smile.com",
+      "displayName": "Mark Twen",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    },
+    {
+      "userId": "87a39027-5e80-4265-b503-c2e2dac47dda",
+      "email": "oleg@vin-smile.com",
+      "displayName": "Oleg M.",
+      "tenantId": "",
+      "isActive": false,
+      "gender": "Unknown",
+      "id": null
+    }
+  ]
+}

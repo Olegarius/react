@@ -25,8 +25,8 @@ const HOC = (ChildComponent) => {
 
 		const noName = () => (
 			<div>
-				<div>You didn't enter name!</div>
-				<button onClick={ auth }>try again?</button>
+				<div>You are not logined!</div>
+				<button onClick={ auth }>Login</button>
 			</div>
 		);
 

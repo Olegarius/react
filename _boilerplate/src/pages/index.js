@@ -1,5 +1,5 @@
 import Home from './Home';
-import Greating from './Greating';
-import UserList from './UserList';
+import Page404 from './Page404';
+import Users from './Users';
 
-export { Home, Greating, UserList };
+export { Home, Users, Page404 };

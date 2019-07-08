@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+    .main-sidebar {
+        min-width: 300px;
+        z-index: 1000;
+    }
+    .main-content {
+        max-width: calc(100% - 300px);
+        flex: 0 0 calc(100% - 300px);
+        margin-left: 300px;
+    }
+    .sidebar_arrow {
+        display: none;
+    }
+}
+
+h5.modal-title {
+    width: 100%;
+}
+
+.custom-toggle .custom-control-input:checked ~ .custom-control-label::before {
+    background: #007bff;
+    border-color: #007bff;
+}

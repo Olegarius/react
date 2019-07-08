@@ -1,5 +1,4 @@
 import localStorageMiddleware from './localStorageMiddleware';
+import fetchMiddleware from './fetchMiddleware';
 
-export {
-	localStorageMiddleware
-};
+export { localStorageMiddleware, fetchMiddleware };

@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "userId": "0a247991-2f5f-4609-9200-c37ba2915e1a",
+      "email": "otest@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Male",
+      "id": "2e9ad2ea-d0f0-42a6-a95a-0978c382f8bb"
+    },
+    {
+      "userId": "09bd9c48-a738-416d-9c78-294c13cefbad",
+      "email": "anna@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Female",
+      "id": "867d0cdc-0e8a-40ca-bb50-e4ae51c7b66f"
+    },
+    {
+      "userId": "991c63a3-0a90-455d-9d08-a87ef51cad28",
+      "email": "Maria@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Female",
+      "id": "71747fb9-7cfc-4b53-91ff-515c7088b479"
+    },
+    {
+      "userId": "3be937a4-ea0b-4671-9d6d-03383af59802",
+      "email": "Alex@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Male",
+      "id": "fdf95e9f-f605-45b1-80c6-aea0bfaee49b"
+    },
+    {
+      "userId": "57a1a904-5e30-47c4-bb1e-932b9643349e",
+      "email": "vlad@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Male",
+      "id": "651dddeb-0a94-46a6-817c-a2ab16e3f6b9"
+    },
+    {
+      "userId": "f683c571-68eb-4707-b5bd-24c3e7622ea3",
+      "email": "zscore@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Other",
+      "id": "cbc4cead-d098-46fc-a212-c1d5e4a81fb9"
+    },
+    {
+      "userId": "9d71988b-618f-4403-815d-96a95e5acb18",
+      "email": "wpooh@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Male",
+      "id": "51f2ef1b-fff6-4657-9285-82ac5bfbf5c2"
+    },
+    {
+      "userId": "467c81c8-4951-422f-b727-ee8cd855710c",
+      "email": "subtest@vin-smile.com",
+      "displayName": null,
+      "tenantId": "",
+      "isActive": true,
+      "gender": "Other",
+      "id": "ce49850f-7744-45a2-ba16-980252223b08"
+    }
+  ],
+  "continuationToken": null
+}
